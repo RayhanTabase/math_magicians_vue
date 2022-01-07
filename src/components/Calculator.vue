@@ -30,6 +30,7 @@
 <script>
 import calculate from '../logic/calculate.js'
 export default {
+  name: 'Calculator',
   data() {
     return {
       total: null,
