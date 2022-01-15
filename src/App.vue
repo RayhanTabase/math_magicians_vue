@@ -1,23 +1,54 @@
 <template>
-<router-link to="/">Home</router-link>
-<router-link to="/quote">Quotes</router-link>
-<router-link to="/calculator">Calculator</router-link>
-
+  <Navbar />
   <router-view></router-view>
 </template>
 
 <script>
 
+import Navbar from './components/Navbar.vue'
+
 export default {
   name: 'App',
+  components: {
+    Navbar
+  }
 }
 </script>
 
 <style>
-#app {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #444;
+  background: rgb(222, 227, 231);
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Mochiy Pop P One', sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: orange;
+}
+
+.container {
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 </style>
