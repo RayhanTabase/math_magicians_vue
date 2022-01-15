@@ -1,5 +1,9 @@
 <template>
-  <div id="Calculator">
+<div id="calculatorContainer" className="container">
+  <h2 class="header">
+    Let's do some math!
+  </h2>
+  <div id="calculator">
     <div id="resultsContainer">{{next || total || 0}}</div>
       <div id="calculatorBody">
         <button type="button" v-on:click = "handleClick" name="AC">AC</button>
@@ -23,6 +27,7 @@
         <button type="button" class="altColor" v-on:click = "handleClick" name="=">=</button>
     </div>
   </div>
+</div>
 </template>
 
 
@@ -48,7 +53,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 button {
   background: rgb(233, 233, 233);
@@ -56,10 +60,18 @@ button {
   border: 1px solid rgb(223, 223, 223);
 }
 
-#Calculator {
-  width: 70%;
-  min-width: 70%;
-  font-size: 1.4rem;
+#calculatorContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+#calculatorContainer .header {
+  font-size: 1.2rem;
+  width: 20%;
+}
+
+#calculator {
+  width: 60%;
 }
 
 #resultsContainer {
@@ -69,10 +81,15 @@ button {
   background: gray;
   color: #fff;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-end;
   min-height: 3em;
   padding-right: 0.5em;
+}
+
+#resultsContainer .currentCalculation {
+  font-size: 0.6em;
 }
 
 #calculatorBody {
@@ -87,4 +104,5 @@ button {
 .altColor {
   background: orange;
 }
+
 </style>
